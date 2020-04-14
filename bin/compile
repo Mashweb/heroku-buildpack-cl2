@@ -38,5 +38,5 @@ export CACHE_DIR
 export BUILD_DIR
 
 echo "-----> Starting build"
-$BUILD_DIR/sbcl/sbcl-1.0.54-x86-64-linux/run-sbcl.sh --load "$BUILDPACK_DIR/bin/compile.lisp" --eval "(sb-ext:quit)"
+$BUILD_DIR/sbcl/sbcl-1.4.3-x86-64-linux/run-sbcl.sh --load "$BUILDPACK_DIR/bin/compile.lisp" --eval "(sb-ext:quit)"
 echo "-----> Build finished"
