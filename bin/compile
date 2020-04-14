@@ -21,7 +21,7 @@ if [ $RESET_CACHE ]; then
   rm -rf $CACHE_DIR/*
 fi
 
-if [ ! -d "$CACHE_DIR/sbcl/sbcl-1.0.54-x86-64-linux" ]; then
+if [ ! -d "$CACHE_DIR/sbcl/sbcl-1.4.3-x86-64-linux" ]; then
     echo "-----> Fetching sbcl"    
     SBCL_PACKAGE="http://prdownloads.sourceforge.net/sbcl/sbcl-1.4.3-x86-linux-binary.tar.bz2"
     mkdir -p "$CACHE_DIR/sbcl" && curl $SBCL_PACKAGE -s -o -  | tar xjf - -C "$CACHE_DIR/sbcl"
