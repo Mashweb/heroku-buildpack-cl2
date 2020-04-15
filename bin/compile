@@ -27,7 +27,7 @@ if [ ! -d "$CACHE_DIR/sbcl/sbcl-1.4.3-x86-64-linux" ]; then
     mkdir -p "$CACHE_DIR/sbcl" && curl $SBCL_PACKAGE -s -o -  | tar xjf - -C "$CACHE_DIR/sbcl"
     ls -Rl "$CACHE_DIR/sbcl"
     chmod +x "$CACHE_DIR/sbcl/sbcl-1.4.3-x86-64-linux/run-sbcl.sh"
-    find . -name 'run-sbcl.sh' -exec ls -l "{}" \;
+    find $CACHE_DIR -name 'run-sbcl.sh' -exec ls -l "{}" \;
 fi
 # add to slug 
 cp -r "$CACHE_DIR/sbcl" $BUILD_DIR
