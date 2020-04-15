@@ -25,7 +25,8 @@ if [ ! -d "$CACHE_DIR/sbcl/sbcl-1.4.3-x86-linux" ]; then
     echo "-----> Fetching sbcl"    
     SBCL_PACKAGE="https://excellmedia.dl.sourceforge.net/project/sbcl/sbcl/1.4.3/sbcl-1.4.3-x86-linux-binary.tar.bz2"
     mkdir -p "$CACHE_DIR/sbcl" && curl $SBCL_PACKAGE -s -o -  | tar xjf - -C "$CACHE_DIR/sbcl"
-    ls -Rl "$CACHE_DIR/sbcl"
+    #ls -Rl "$CACHE_DIR/sbcl"
+    find $CACHE_DIR
     chmod +x "$CACHE_DIR/sbcl/sbcl-1.4.3-x86-linux/run-sbcl.sh"
     find $CACHE_DIR -name 'run-sbcl.sh' -exec ls -l "{}" \;
 fi
@@ -40,5 +41,6 @@ export CACHE_DIR
 export BUILD_DIR
 
 echo "-----> Starting build"
+find $BUILD_DIR
 $BUILD_DIR/sbcl/sbcl-1.4.3-x86-linux/run-sbcl.sh --load "$BUILDPACK_DIR/bin/compile.lisp" --eval "(sb-ext:quit)"
 echo "-----> Build finished"
