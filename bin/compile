@@ -44,5 +44,6 @@ export BUILD_DIR
 echo "-----> Starting build"
 find $BUILD_DIR
 $BUILD_DIR/sbcl/sbcl-2.0.3-x86-64-linux/run-sbcl.sh --load "$BUILDPACK_DIR/bin/compile.lisp" --eval "(sb-ext:quit)"
+find . -name /lib
 # $RUNSBCL_DIR/run-sbcl.sh --load "$BUILDPACK_DIR/bin/compile.lisp" --eval "(sb-ext:quit)"
 echo "-----> Build finished"
