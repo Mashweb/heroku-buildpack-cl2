@@ -27,7 +27,7 @@ if [ ! -d "$CACHE_DIR/sbcl/sbcl-1.4.3-x86-64-linux" ]; then
     mkdir -p "$CACHE_DIR/sbcl" && curl $SBCL_PACKAGE -s -o -  | tar xjf - -C "$CACHE_DIR/sbcl"
     #ls -Rl "$CACHE_DIR/sbcl"
     find $CACHE_DIR
-    chmod +x "$CACHE_DIR/sbcl/sbcl-1.4.3-x86-64-linux/run-sbcl.sh"
+    chmod +x "$CACHE_DIR/sbcl/sbcl-1.4.3-x86-linux/run-sbcl.sh"
     find $CACHE_DIR -name 'run-sbcl.sh' -exec ls -l "{}" \;
 fi
 # add to slug 
@@ -42,5 +42,5 @@ export BUILD_DIR
 
 echo "-----> Starting build"
 find $BUILD_DIR
-$BUILD_DIR/sbcl/sbcl-1.4.3-x86-64-linux/run-sbcl.sh --load "$BUILDPACK_DIR/bin/compile.lisp" --eval "(sb-ext:quit)"
+$BUILD_DIR/sbcl/sbcl-1.4.3-x86-linux/run-sbcl.sh --load "$BUILDPACK_DIR/bin/compile.lisp" --eval "(sb-ext:quit)"
 echo "-----> Build finished"
